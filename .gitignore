@@ -1,5 +1,15 @@
-# Created by https://www.toptal.com/developers/gitignore/api/django,react
-# Edit at https://www.toptal.com/developers/gitignore?templates=django,react
+# Created by https://www.toptal.com/developers/gitignore/api/django
+# Edit at https://www.toptal.com/developers/gitignore?templates=django
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+migrations/
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -11,6 +21,7 @@
 *$py.class
 
 # C extensions
+*.so
 
 # Distribution / packaging
 .Python
@@ -159,3 +170,5 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# End of https://www.toptal.com/developers/gitignore/api/django
