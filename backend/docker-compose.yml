@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    restart: always
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8001 
+    volumes:
+      - .:/backend
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env 
