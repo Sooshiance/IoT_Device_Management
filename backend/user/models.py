@@ -100,11 +100,6 @@ class Profile(models.Model):
     username        = models.CharField(max_length=255, unique=True)
     first_name      = models.CharField(max_length=127, null=True, blank=True)
     last_name       = models.CharField(max_length=127, null=True, blank=True)
-    bio             = models.CharField(max_length=255, blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
-    website         = models.URLField(blank=True, null=True)
-    location        = models.CharField(max_length=144, blank=True, null=True)
-    birth_date      = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return self.user.username
