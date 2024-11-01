@@ -8,7 +8,12 @@ from user.models import User
 
 class DeviceAPITestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(email="test@gmail.com",
+                                             phone="09123456789",
+                                             username="username",
+                                             first_name="abcde",
+                                             last_name="fgh",
+                                             password='testpass')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
         self.device = Device.objects.create(user=self.user, name='Test Device', type='sensor')
@@ -45,7 +50,12 @@ class DeviceAPITestCase(APITestCase):
 
 class DeviceGroupAPITestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(email="test@gmail.com",
+                                             phone="09123456789",
+                                             username="username2",
+                                             first_name="abcde",
+                                             last_name="fghij",
+                                             password='testpass')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
         self.device_group = DeviceGroup.objects.create(user=self.user, name='Test Group')
@@ -82,7 +92,12 @@ class DeviceGroupAPITestCase(APITestCase):
 
 class NotificationAPITestCase(APITestCase):
     def setUp(self):
-        self.user = User.objects.create_user(username='testuser', password='testpass')
+        self.user = User.objects.create_user(email="test@gmail.com",
+                                             phone="09123456789",
+                                             username="username3",
+                                             first_name="abcde",
+                                             last_name="fghij",
+                                             password='testpass')
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
         self.notification = Notification.objects.create(user=self.user, message='Test Notification')
