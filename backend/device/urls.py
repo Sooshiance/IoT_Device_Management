@@ -10,6 +10,8 @@ from .views import (DeviceListCreateAPIView,
                     NotificationMarkAsReadAPIView,)
 
 
+app_name = "device"
+
 urlpatterns = [
     path('devices/', DeviceListCreateAPIView.as_view(), name='device-list-create'),
     path('devices/<str:did>/', DeviceRetrieveUpdateDestroyAPIView.as_view(), name='device-detail'),

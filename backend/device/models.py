@@ -10,7 +10,7 @@ from user.models import User
 class Device(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='devices')
     name = models.CharField(max_length=100)
-    type = models.CharField(max_length=10, choices=DeviceType.choices())
+    type = models.PositiveSmallIntegerField(choices=DeviceType.choices())
     status = models.BooleanField(default=True)
     location = models.CharField(max_length=255, null=True, blank=True)
     firmware_version = models.CharField(max_length=50, null=True, blank=True)
