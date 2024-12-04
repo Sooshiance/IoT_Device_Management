@@ -2,6 +2,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 
+import mongoengine
 from decouple import config
 
 
@@ -29,6 +30,17 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     'device.apps.DeviceConfig',
 ]
+
+
+# MongoDB Configuration
+MONGODB_SETTINGS = {
+    'db': 'coordinate',
+    'host': 'localhost',
+    'port': 27017,
+}
+
+
+mongoengine.connect(**MONGODB_SETTINGS)
 
 
 DATABASES = {
